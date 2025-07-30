@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>環島day1</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif; /* 設定字型 */
+                margin: 20px auto ; /* 外邊距，讓內容不貼邊 */
+                max-width: 800px; /* 限制內容最大寬度 */
+                line-height: 1.6; /* 行高，增加可讀性 */
+            }
+            h2 {
+                color: #333; /* 標題顏色 */
+                text-align: center; /* 標題置中 */
+            }
+            p {
+                overflow-wrap: break-word; /* 自動換行，長單詞也會斷開 */
+                white-space: normal; /* 確保文字正常換行 */
+                text-align: justify; /* 文字兩端對齊，視覺更整齊 */
+                color:black
+            }
+            .left-background {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 240px;
+                height: 100vh;
+                background-color: lightsteelblue;
+                z-index: 0;
+            }
+            .right-background {
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: 240px;
+                height: 100vh;
+                background-color: lightsteelblue;
+                z-index: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left-background" ></div>
+        <div class="right-background" ></div>
+
+    </body>
+</html>
