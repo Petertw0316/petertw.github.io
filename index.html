@@ -3,8 +3,46 @@
     <head>
         <meta charset="UTF-8"></meta>
         <title>小潘的網站</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif; /* 設定字型 */
+                margin: 20px auto ; /* 外邊距，讓內容不貼邊 */
+                max-width: 800px; /* 限制內容最大寬度 */
+                line-height: 1.6; /* 行高，增加可讀性 */
+            }
+            h2 {
+                color: #333; /* 標題顏色 */
+                text-align: center; /* 標題置中 */
+            }
+            p {
+                overflow-wrap: break-word; /* 自動換行，長單詞也會斷開 */
+                white-space: normal; /* 確保文字正常換行 */
+                text-align: justify; /* 文字兩端對齊，視覺更整齊 */
+                color:black
+            }
+            .left-background {
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 240px;
+                height: 100vh;
+                background-color: lightsteelblue;
+                z-index: 0;
+            }
+            .right-background {
+                position: fixed;
+                right: 0;
+                top: 0;
+                width: 240px;
+                height: 100vh;
+                background-color: lightsteelblue;
+                z-index: 0;
+            }
+        </style>
     </head>
     <body>
+        <div class="left-background" ></div>
+        <div class="right-background" ></div>
         <h2>hi 我是小潘</h2>
         <p>我想架設一個屬於我的網站，方便我學習及記錄生活用。</p>
         <p>在學校學習方面我使用google notes每次都要找一陣子，我覺得有些不方便。</p>
@@ -12,5 +50,6 @@
         這是我的IG:<a href="https://www.instagram.com/pppgt0316/">pppgt0316</a>
         <br>
         <a href="wtfthing.html">瘋狂旅遊or做傻事篇</a>
+
     </body>
 </html>

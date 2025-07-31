@@ -2,71 +2,99 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>火車環島篇</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif; /* 設定字型 */
-                margin: 20px auto ; /* 外邊距，讓內容不貼邊 */
-                max-width: 800px; /* 限制內容最大寬度 */
-                line-height: 1.6; /* 行高，增加可讀性 */
-            }
-            h2 {
-                color: #333; /* 標題顏色 */
-                text-align: center; /* 標題置中 */
-            }
-            p {
-                overflow-wrap: break-word; /* 自動換行，長單詞也會斷開 */
-                white-space: normal; /* 確保文字正常換行 */
-                text-align: justify; /* 文字兩端對齊，視覺更整齊 */
-                color:black
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火車環島篇</title>
+    <style>
+        html {
+            font-size: 16px; /* 設置基準字體大小，1rem = 16px */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 1.25rem auto; /* 20px ÷ 16 = 1.25rem */
+            max-width: 50rem; /* 800px ÷ 16 = 50rem */
+            line-height: 1.6;
+            z-index: 1;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            font-size: 1.5rem; /* 約 24px，瀏覽器預設 h2 大小 */
+        }
+        p {
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: justify;
+            color: black;
+            font-size: 1rem; /* 明確設置，約 16px */
+        }
+        .image-container {
+            position: absolute;
+            right: var(--sidebar-width); /* 靠在藍色背景的左邊 */
+            top: 16.25rem;
+            width: 240px;
+            z-index: 1;
+        }   
+        img {
+            width: 240px; 
+            height: 400px; 
+            border: 2px solid red; 
+            display: block; /* 避免圖片下方多餘間距 */
+        }
+        .comment {
+            margin-top: 5px; 
+            font-size: 14px; 
+            color: black;
+            text-align: center;
+        }
+        .left-background,
+        .right-background {
+            position: fixed;
+            top: 0;
+            width: var(--sidebar-width, 240px); /* 動態由 JS 控制 */
+            height: 100vh;
+            background-color: lightsteelblue;
+            z-index: 0;
+        }
+        .left-background {
+            left: 0;
+        }
+        .right-background {
+            right: 0;
+        }
+        .content {
+            max-width: calc(100vw - 2 * var(--sidebar-width));
+            margin: 0 auto;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+        /* 響應式設計，適應小螢幕和縮放 */
+        @media (max-width: 37.5rem) { /* 600px ÷ 16 = 37.5rem */
+            .left-background, .right-background {
+                width: 3.125rem; /* 50px ÷ 16 = 3.125rem */
             }
             .image-container {
-                position: absolute;
-                right: 242px;
-                top: 260px;
-                width: 300px;
-                z-index: 1;
+                position: static; /* 改為正常流，避免縮放錯位 */
+                margin: 1.25rem auto; /* 20px ÷ 16 = 1.25rem */
+                text-align: center;
             }
             img {
-                width: 300px;
-                height: 500px;
-                border: 2px solid red
+                width: 100%;
+                max-width: 18.75rem; /* 300px ÷ 16 = 18.75rem */
+                height: auto; /* 保持比例 */
+                border: 0.125rem solid red;
             }
-            .comment{
-                margin-top: 5px; /* 與圖片保持間距 */
-                font-size: 14px; /* 註解文字大小 */
-                color:black; /* 註解文字顏色 */
-                text-align: center; /* 註解文字置中 */
-            }
-            .left-background {
-                position: fixed;
-                left: 0;
-                top: 0;
-                width: 240px;
-                height: 100vh;
-                background-color: lightsteelblue;
-                z-index: 0;
-            }
-            .right-background {
-                position: fixed;
-                right: 0;
-                top: 0;
-                width: 240px;
-                height: 100vh;
-                background-color: lightsteelblue;
-                z-index: 0;
-            }
-        </style>
+        }
+    </style>     
     </head>
     <body>
         <div class="left-background" ></div>
         <div class="right-background" ></div>
-        <div>
+        <div class="content">
             <h2>火車環島八日遊 (2025/07/16~2025/07/23)</h2>
             <p>我與同學想要趁暑假搭火車前往全台各地的冷門車站，並以逆時針方式繞行，另外還會去集集線、沙崙線以及我最期待的平溪線。
             其實在2023年升大學的暑假，我就曾與一位高中同學火車環島，當時我們是以隨機的方式，利用兩顆骰子的加總點數來決定我們要前進幾步，有點類似大富翁的玩法。
             六天下來，對於臺灣不是很熟的我們來說，體驗還蠻不錯的，不過很可惜沒辦法去一些私心很想去的車站，於是期待這次的旅程能夠小小的完成之前的遺憾。</p>
-        </div>
             <p>以下是這八天我們所去過的車站，當天的紀錄可以點前方的天數。</p>
             <a href="day1.html">第一天</a><p> 7/16 : 新莊、新竹、談文、龍港、台中港、清水、追分、成功、臺中</p>
             <a href="day2.html">第二天</a><p> 7/17 : 花壇、林內、二水、濁水、龍泉、集集、水里</p>
@@ -76,9 +104,37 @@
             <a href="day6.html">第六天</a><P> 7/21 : 玉里、萬榮、瑞穗、平和、花蓮</P>
             <a href="day7.html">第七天</a><P> 7/22 : 武塔、漢本、南澳、福隆、石城、四腳亭、八堵、基隆</P>
             <a href="day8.html">第八天</a><P> 7/23 : 暖暖、三貂嶺、牡丹、望古、菁桐、大華、臺北</P>
+        </div>
         <div class="image-container">
             <img src="IMG_1157.PNG" alt="環島總車站照片">
             <p class="comment">8天總共探訪了62個車站</p>
         </div>   
+        <script>
+            (function () {
+            const SIDE_INIT = 300; // 初始 sidebar 寬度 px
+            const root = document.documentElement;
+
+            function adjustSidebars() {
+                const zoom = window.devicePixelRatio || 1;
+                const newWidth = SIDE_INIT / zoom;
+                root.style.setProperty("--sidebar-width", newWidth + "px");
+            }
+
+            // 初始執行
+            adjustSidebars();
+
+            // 監聽 resize
+            window.addEventListener("resize", adjustSidebars);
+
+            // 監聽 zoom 變化（某些瀏覽器 DPR 會變）
+            let lastDPR = window.devicePixelRatio;
+            setInterval(() => {
+                if (window.devicePixelRatio !== lastDPR) {
+                lastDPR = window.devicePixelRatio;
+                adjustSidebars();
+                }
+            }, 300);
+            })();
+        </script>
     </body>
 </html>
