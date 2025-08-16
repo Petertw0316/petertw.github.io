@@ -2,13 +2,96 @@
 <html>
     <head>
         <meta charset="UTF-8"></meta>
-        <title>小潘的奇怪旅遊</title>
+        <title>瘋狂旅遊</title>
+        <style>
+            html {
+                font-size: 16px; /* 設置基準字體大小，1rem = 16px */
+            }
+            body {
+                font-family: Arial, sans-serif;
+                margin: 1.25rem auto; /* 20px ÷ 16 = 1.25rem */
+                max-width: 50rem; /* 800px ÷ 16 = 50rem */
+                line-height: 1.6;
+                z-index: 1;
+            }
+            h2 {
+                color: #333;
+                text-align: center;
+                font-size: 1.5rem; /* 約 24px，瀏覽器預設 h2 大小 */
+            }
+            p {
+                overflow-wrap: break-word;
+                white-space: normal;
+                text-align: justify;
+                color: black;
+                font-size: 1rem; /* 明確設置，約 16px */
+            }
+            .left-background,
+            .right-background {
+                position: fixed;
+                top: 0;
+                width: var(--sidebar-width, 240px); /* 動態由 JS 控制 */
+                height: 100vh;
+                background-color: lightsteelblue;
+                z-index: 0;
+            }
+            .left-background {
+                left: 0;
+            }
+            .right-background {
+                right: 0;
+            }
+            .content {
+                max-width: calc(100vw - 2 * var(--sidebar-width));
+                margin: 0 auto;
+                box-sizing: border-box;
+                position: relative;
+                z-index: 1;
+            }
+            @media (max-width: 37.5rem) { /* 600px ÷ 16 = 37.5rem */
+            .left-background, .right-background {
+                width: 3.125rem; /* 50px ÷ 16 = 3.125rem */
+            }
+            }
+        </style>
     </head>
     <body>
-        <a href="trainaroundtaiwan.html">火車環島八日遊</a>
-        <br>
-        <a href="tamxinwalk.html">淡水走到新店</a>
-        <br>
-        <a href="drunkmoonlake.html">台大醉月湖湖心亭登島</a>
+        <div class="left-background" ></div>
+        <div class="right-background" ></div>
+        <div class="content">
+            <h2>目錄</h2>
+            <a href="trainaroundtaiwan.html">火車環島八日遊</a>
+            <br>
+            <a href="tamxinwalk.html">淡水走到新店</a>
+            <br>
+            <a href="drunkmoonlake.html">台大醉月湖湖心亭登島</a>
+        </div>
+        <script>
+            (function () {
+            const SIDE_INIT = 300; // 初始 sidebar 寬度 px
+            const root = document.documentElement;
+
+            function adjustSidebars() {
+                const zoom = window.devicePixelRatio || 1;
+                const newWidth = SIDE_INIT / zoom;
+                root.style.setProperty("--sidebar-width", newWidth + "px");
+            }
+
+            // 初始執行
+            adjustSidebars();
+
+            // 監聽 resize
+            window.addEventListener("resize", adjustSidebars);
+
+            // 監聽 zoom 變化（某些瀏覽器 DPR 會變）
+            let lastDPR = window.devicePixelRatio;
+            setInterval(() => {
+                if (window.devicePixelRatio !== lastDPR) {
+                lastDPR = window.devicePixelRatio;
+                adjustSidebars();
+                }
+            }, 300);
+            })();
+        </script>
     </body>
 </html>
