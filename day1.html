@@ -5,37 +5,51 @@
         <title>第一天 2025/07/16 - 小潘的網頁</title>
         <style>
             body {
-                font-family: Arial, sans-serif; /* 設定字型 */
-                margin: 20px auto; /* 加上 auto 讓畫面在寬螢幕時可以整體置中 */
-                max-width: 800px; /* 限制內容最大寬度 */
-                line-height: 1.6; /* 行高，增加可讀性 */
-                padding: 0 20px; /* 增加內邊距，避免在手機小螢幕時文字太貼邊 */
+                font-family: Arial, sans-serif;
+                margin: 0; /* 改為 0，讓背景可以完全貼合螢幕邊緣 */
+                padding: 20px;
+                
+                /* ▼ 背景設定在這裡 ▼ */
+                background-image: url('你的背景圖片名稱.jpg'); /* 如果首頁是用圖片，把檔名填在這裡 */
+                background-color: #f4f4f9; /* 如果首頁是單色背景，請改這個色碼。若有圖片，這行會變成圖片載入前的底色 */
+                background-size: cover; /* 讓圖片自動縮放填滿整個螢幕 */
+                background-position: center; /* 讓背景圖置中 */
+                background-attachment: fixed; /* 讓背景固定，往下滾動網頁時背景不會跟著跑 */
             }
+            
+            /* 新增一個容器區塊，讓文字不會和背景混在一起 */
+            .container {
+                max-width: 800px; 
+                margin: 0 auto; /* 讓容器在畫面置中 */
+                background-color: rgba(255, 255, 255, 0.85); /* 半透明的白色底色，85%不透明度 */
+                padding: 30px;
+                border-radius: 10px; /* 框框加上圓角 */
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 加一點淡淡的陰影更有立體感 */
+            }
+
             h2 {
-                color: #333; /* 標題顏色 */
-                text-align: center; /* 標題置中 */
+                color: #333;
+                text-align: center;
             }
             p {
-                overflow-wrap: break-word; /* 自動換行，長單詞也會斷開 */
-                white-space: normal; /* 確保文字正常換行 */
-                text-align: justify; /* 文字兩端對齊，視覺更整齊 */
+                overflow-wrap: break-word;
+                white-space: normal;
+                text-align: justify;
+                line-height: 1.6;
             }
-            /* 針對圖片新增樣式，讓圖片適應寬度並置中 */
             img {
                 max-width: 100%;
                 height: auto;
                 display: block;
                 margin: 20px auto;
-                border-radius: 8px; /* 稍微加一點圓角讓圖片更好看（可選） */
+                border-radius: 8px;
             }
-            /* 圖片下方的說明文字 */
             .caption {
                 text-align: center;
                 color: #666;
                 font-size: 0.9em;
                 margin-top: -10px;
             }
-            /* 返回首頁按鈕的樣式 */
             .back-link {
                 display: block;
                 text-align: center;
@@ -51,17 +65,20 @@
         </style>
     </head>
     <body>
-        <h2>第一天 2025/07/16</h2>
-        
-        <p>第一天的早上我們就展開了搭火車環島之旅，先前往新莊車站搭上六家線的列車，我朋友則是從六家搭，因此我們直接在火車上會合，要前往我們的第一站新竹。</p>
-        
-        <p>由於我們應該除了搭火車的時間外，需要長時間的步行，背包不能背太重，我最後帶了三套衣服出門(包含身上的那一件)，更別說帶行李箱了~ 另外我隨身還帶了一本筆記本蒐集車站印章用，出發前還隨手帶上了平板，雖然一開始蠻後悔的，因為也增加了一點重量，不過馬上就在我後面的旅程發揮很大的功用，敬請期待。</p>
-        
-        <img alt="新莊車站" src="IMG_9039.jpg">
-        <p class="caption">起始站: 新莊車站!</p>
-        
-        <p>抵達新竹車站後，我們就到附近走走買點東西，新竹車站也是乘載了我一些回憶，高中好多時間都在這附近補習，每個角落都還蠻熟悉的，忘記那時候有幹嘛了，但我們決定往海線走，前往海線五寶之一的談文車站。。。</p>
+        <!-- 用 container 把所有內容包起來 -->
+        <div class="container">
+            <h2>第一天 2025/07/16</h2>
+            
+            <p>第一天的早上我們就展開了搭火車環島之旅，先前往新莊車站搭上六家線的列車，我朋友則是從六家搭，因此我們直接在火車上會合，要前往我們的第一站新竹。</p>
+            
+            <p>由於我們應該除了搭火車的時間外，需要長時間的步行，背包不能背太重，我最後帶了三套衣服出門(包含身上的那一件)，更別說帶行李箱了~ 另外我隨身還帶了一本筆記本蒐集車站印章用，出發前還隨手帶上了平板，雖然一開始蠻後悔的，因為也增加了一點重量，不過馬上就在我後面的旅程發揮很大的功用，敬請期待。</p>
+            
+            <img alt="新莊車站" src="IMG_9039.jpg">
+            <p class="caption">起始站: 新莊車站!</p>
+            
+            <p>抵達新竹車站後，我們就到附近走走買點東西，新竹車站也是乘載了我一些回憶，高中好多時間都在這附近補習，每個角落都還蠻熟悉的，忘記那時候有幹嘛了，但我們決定往海線走，前往海線五寶之一的談文車站。</p>
 
-        <a href="trainaroundtaiwan.html" class="back-link">← 回到首頁</a>
+            <a href="trainaroundtaiwan.html" class="back-link">← 回到首頁</a>
+        </div>
     </body>
 </html>
