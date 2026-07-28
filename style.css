@@ -1,0 +1,89 @@
+/* 旅遊日誌的共用顏色主題與設定 */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #d35400;
+    --bg-color: #fdfbf7;
+    --card-bg: #ffffff;
+    --text-color: #4a4a4a;
+}
+
+body {
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-top: 0;
+    margin-bottom: 40px;
+    border-bottom: 2px dashed #ecf0f1;
+    padding-bottom: 20px;
+}
+
+p {
+    font-size: 1.05em;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: block;
+    margin: 40px auto 10px auto;
+}
+
+.caption {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9em;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+/* 返回按鈕的設計 */
+.btn-container {
+    text-align: center;
+    margin-top: 50px;
+    border-top: 2px dashed #ecf0f1;
+    padding-top: 30px;
+}
+
+.back-link {
+    font-weight: bold;
+    color: white;
+    background: var(--primary-color);
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.back-link:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
