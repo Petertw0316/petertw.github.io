@@ -1,84 +1,124 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>第一天 2025/07/16 - 小潘的網頁</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0; /* 改為 0，讓背景可以完全貼合螢幕邊緣 */
-                padding: 20px;
-                
-                /* ▼ 背景設定在這裡 ▼ */
-                background-image: url('你的背景圖片名稱.jpg'); /* 如果首頁是用圖片，把檔名填在這裡 */
-                background-color: #f4f4f9; /* 如果首頁是單色背景，請改這個色碼。若有圖片，這行會變成圖片載入前的底色 */
-                background-size: cover; /* 讓圖片自動縮放填滿整個螢幕 */
-                background-position: center; /* 讓背景圖置中 */
-                background-attachment: fixed; /* 讓背景固定，往下滾動網頁時背景不會跟著跑 */
-            }
-            
-            /* 新增一個容器區塊，讓文字不會和背景混在一起 */
-            .container {
-                max-width: 800px; 
-                margin: 0 auto; /* 讓容器在畫面置中 */
-                background-color: rgba(255, 255, 255, 0.85); /* 半透明的白色底色，85%不透明度 */
-                padding: 30px;
-                border-radius: 10px; /* 框框加上圓角 */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 加一點淡淡的陰影更有立體感 */
-            }
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一天 2025/07/16 | 火車環島八日遊</title>
+    <style>
+        /* 與首頁完全相同的顏色主題 */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d35400;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-color: #4a4a4a;
+        }
 
-            h2 {
-                color: #333;
-                text-align: center;
-            }
-            p {
-                overflow-wrap: break-word;
-                white-space: normal;
-                text-align: justify;
-                line-height: 1.6;
-            }
-            img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin: 20px auto;
-                border-radius: 8px;
-            }
-            .caption {
-                text-align: center;
-                color: #666;
-                font-size: 0.9em;
-                margin-top: -10px;
-            }
-            .back-link {
-                display: block;
-                text-align: center;
-                margin-top: 40px;
-                margin-bottom: 20px;
-                text-decoration: none;
-                color: #0056b3;
-                font-weight: bold;
-            }
-            .back-link:hover {
-                text-decoration: underline;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- 用 container 把所有內容包起來 -->
-        <div class="container">
-            <h2>第一天 2025/07/16</h2>
-            
-            <p>第一天的早上我們就展開了搭火車環島之旅，先前往新莊車站搭上六家線的列車，我朋友則是從六家搭，因此我們直接在火車上會合，要前往我們的第一站新竹。</p>
-            
-            <p>由於我們應該除了搭火車的時間外，需要長時間的步行，背包不能背太重，我最後帶了三套衣服出門(包含身上的那一件)，更別說帶行李箱了~ 另外我隨身還帶了一本筆記本蒐集車站印章用，出發前還隨手帶上了平板，雖然一開始蠻後悔的，因為也增加了一點重量，不過馬上就在我後面的旅程發揮很大的功用，敬請期待。</p>
-            
-            <img alt="新莊車站" src="IMG_9039.jpg">
-            <p class="caption">起始站: 新莊車站!</p>
-            
-            <p>抵達新竹車站後，我們就到附近走走買點東西，新竹車站也是乘載了我一些回憶，高中好多時間都在這附近補習，每個角落都還蠻熟悉的，忘記那時候有幹嘛了，但我們決定往海線走，前往海線五寶之一的談文車站。</p>
+        body {
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            background-color: var(--bg-color); /* 首頁的米白底色 */
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+        }
 
+        /* 首頁的陰影白框容器 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        /* 沿用首頁的虛線副標題設計 */
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 0;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed #ecf0f1;
+            padding-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* 圖片設計 (加上跟首頁圖片一樣的圓角與陰影) */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            display: block;
+            margin: 40px auto 10px auto;
+        }
+
+        .caption {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+
+        /* 返回按鈕的設計 (配合首頁的 day-card 按鈕風格) */
+        .btn-container {
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px dashed #ecf0f1;
+            padding-top: 30px;
+        }
+
+        .back-link {
+            font-weight: bold;
+            color: white;
+            background: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px); /* 滑鼠游標移過去時會有微微浮起的效果 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>第一天行程</h2>
+        <p class="subtitle">2025/07/16</p>
+
+        <p>第一天的早上我們就展開了搭火車環島之旅，先前往新莊車站搭上六家線的列車，我朋友則是從六家搭，因此我們直接在火車上會合，要前往我們的第一站新竹。</p>
+        
+        <p>由於我們應該除了搭火車的時間外，需要長時間的步行，背包不能背太重，我最後帶了三套衣服出門(包含身上的那一件)，更別說帶行李箱了~ 另外我隨身還帶了一本筆記本蒐集車站印章用，出發前還隨手帶上了平板，雖然一開始蠻後悔的，因為也增加了一點重量，不過馬上就在我後面的旅程發揮很大的功用，敬請期待。</p>
+
+        <img alt="新莊車站" src="IMG_9039.jpg">
+        <p class="caption">起始站: 新莊車站!</p>
+
+        <p>抵達新竹車站後，我們就到附近走走買點東西，新竹車站也是乘載了我一些回憶，高中好多時間都在這附近補習，每個角落都還蠻熟悉的，忘記那時候有幹嘛了，但我們決定往海線走，前往海線五寶之一的談文車站。</p>
+        
+        <!-- 返回首頁按鈕 -->
+        <div class="btn-container">
             <a href="trainaroundtaiwan.html" class="back-link">← 回到首頁</a>
         </div>
-    </body>
+    </div>
+
+</body>
 </html>
